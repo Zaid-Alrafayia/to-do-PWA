@@ -1,5 +1,4 @@
 const taskInput =document.getElementById("taskInput");
-const reminderTime = document.getElementById('reminderTime');
 const addTaskButton =document.getElementById("addTaskButton");
 const taskList =document.getElementById("taskList");
 
@@ -45,12 +44,11 @@ window.addEventListener('load', () => {
   });
 
 
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function() {
-      navigator.serviceWorker
-        .register("/serviceWorker.js")
-        .then(res => console.log("service worker registered"))
-        .catch(err => console.log("service worker not registered", err))
-    })
-  }
-  
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function() {
+    navigator.serviceWorker
+      .register("/serviceWorker.js")
+      .then(res => console.log("service worker registered"))
+      .catch(err => console.log("service worker not registered", err))
+  })
+}
