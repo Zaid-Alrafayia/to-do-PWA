@@ -1,11 +1,11 @@
 const CACHE_NAME = 'todo-pwa-cache-v1';
 const urlsToCache = [
   '',
-  '/assets/imgs/to-do-list.png',
-  '/html/index.html',
-  '/css/style.css',
-  '/js/app.js',
-  '/manifest.json',
+  '/to-do-PWA/assets/imgs/to-do-list.png',
+  '/to-do-PWA/html/index.html',
+  '/to-do-PWA/css/style.css',
+  '/to-do-PWA/js/app.js',
+  '/to-do-PWA/manifest.json',
   'https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css',
   'https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js'
 ];
