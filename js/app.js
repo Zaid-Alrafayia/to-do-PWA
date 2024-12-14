@@ -44,7 +44,7 @@ window.addEventListener('load', () => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function() {
     navigator.serviceWorker
-      .register("/to-do-PWA/js/serviceWorker.js")
+      .register("/to-do-PWA/service-worker.js")
       .then(res => console.log("service worker registered"))
       .catch(err => console.log("service worker not registered", err))
   })
