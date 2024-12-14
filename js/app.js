@@ -2,7 +2,6 @@ const taskInput =document.getElementById("taskInput");
 const addTaskButton =document.getElementById("addTaskButton");
 const taskList =document.getElementById("taskList");
 
-//add task
 addTaskBtn.addEventListener('click', () => {
     const taskText = taskInput.value.trim();
     if (taskText) {
@@ -23,13 +22,11 @@ taskList.addEventListener('click', (e) => {
     }
   });
   
-//save task to storage 
 window.addEventListener('unload', () => {
     const tasks = Array.from(taskList.children).map(task => task.textContent.replace('Delete', '').trim());
     localStorage.setItem('tasks', JSON.stringify(tasks));
   });
 
-//load tasks to storage
 window.addEventListener('load', () => {
     const tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
     tasks.forEach(taskText => {
