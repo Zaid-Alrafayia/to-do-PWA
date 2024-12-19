@@ -8,6 +8,7 @@ addTaskBtn.addEventListener('click', () => {
       const li = document.createElement('li');
       li.className = 'list-group-item d-flex justify-content-between align-items-center';
       li.innerHTML = `
+      <input type="checkbox" disabled>
         ${taskText}
         <button class="btn btn-danger btn-sm delete-btn">Delete</button>
       `;
