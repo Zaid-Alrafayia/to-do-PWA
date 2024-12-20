@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if ('Notification' in window && Notification.permission === 'granted') {
       new Notification('Task Reminder', {
         body: `Don't forget to: ${task}`,
-        icon: '/assets/imgs/to-do-list.png'
+        icon: '/to-do-PWA/assets/imgs/to-do-list.png'
       });
     } else {
       alert(`Reminder: ${task}`);
