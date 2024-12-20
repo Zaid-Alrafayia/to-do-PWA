@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const listItem = document.createElement('li');
       listItem.innerHTML = `
         ${task} (Reminder at ${reminder}) 
-        <button class="btn btn-primary delete-btn">Delete</button>
+        <button class="btn btn-primary delete-btn bg-danger ms-auto">Delete</button>
       `;
-      listItem.className = 'list-group-item';
+      listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
       taskList.appendChild(listItem);
 
       // Schedule the notification
