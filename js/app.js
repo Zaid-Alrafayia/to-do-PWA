@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (task && reminder) {
       // Add the task to the list
       const listItem = document.createElement('li');
-      listItem.textContent = `${task} (Reminder at ${reminder})<button id="delete-btn" class="btn btn-primary">delete</button>`;
+      listItem.textContent = `${task} (Reminder at ${reminder})`;
+      listItem.innerHTML+=`<button id="delete-btn" class="btn btn-primary">delete</button>`;
       listItem.className = 'list-group-item';
       taskList.appendChild(listItem);
 
