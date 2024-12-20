@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const addTaskBtn = document.getElementById('addTaskBtn');
   const taskList = document.getElementById('taskList');
 
-  // Request Notification permission on load
   if ('Notification' in window && Notification.permission !== 'granted') {
     Notification.requestPermission();
   }
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const reminder = reminderTime.value;
 
     if (task && reminder) {
-      // Add the task to the list
       const listItem = document.createElement('li');
       listItem.innerHTML = `
         ${task} (Reminder at ${reminder}) 
@@ -23,10 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
       listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
       taskList.appendChild(listItem);
 
-      // Schedule the notification
       scheduleNotification(task, reminder);
 
-      // Clear input fields
       taskInput.value = '';
       reminderTime.value = '';
     } else {
@@ -34,22 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Add event listener for delete buttons
   taskList.addEventListener('click', (e) => {
     if (e.target.classList.contains('delete-btn')) {
-      e.target.closest('li').remove(); // Remove the closest parent `<li>`
+      e.target.closest('li').remove(); 
     }
   });
 
   function scheduleNotification(task, reminder) {
-    // Calculate time difference
     const now = new Date();
     const [hours, minutes] = reminder.split(':');
     const reminderTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes);
     const timeDifference = reminderTime - now;
 
     if (timeDifference > 0) {
-      // Schedule the notification
       setTimeout(() => {
         showNotification(task);
       }, timeDifference);

@@ -12,6 +12,11 @@
         "sizes": "192x192",
         "type": "image/png"
       }
+      ,{
+        "src": "/to-do-PWA/assets/imgs/to-do-list.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
       
     ]
   }
