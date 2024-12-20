@@ -16,8 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (task && reminder) {
       // Add the task to the list
       const listItem = document.createElement('li');
-      listItem.textContent = `${task} (Reminder at ${reminder})`;
-      listItem.innerHTML+=`<button id="delete-btn" class="btn btn-primary">delete</button>`;
+      listItem.innerHTML = `
+        ${task} (Reminder at ${reminder}) 
+        <button class="btn btn-primary delete-btn">Delete</button>
+      `;
       listItem.className = 'list-group-item';
       taskList.appendChild(listItem);
 
@@ -31,11 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Please enter a task and select a reminder time.');
     }
   });
+
+  // Add event listener for delete buttons
   taskList.addEventListener('click', (e) => {
     if (e.target.classList.contains('delete-btn')) {
-      e.target.parentElement.remove();
+      e.target.closest('li').remove(); // Remove the closest parent `<li>`
     }
   });
+
   function scheduleNotification(task, reminder) {
     // Calculate time difference
     const now = new Date();
@@ -64,4 +69,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
-
